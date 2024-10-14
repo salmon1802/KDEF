@@ -1,0 +1,230 @@
+2024-09-15 00:31:28,498 P1559536 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "data_format": "h5",
+    "data_root": "../../../data/",
+    "dataset_id": "Criteo_x4_10_h5",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "1e-05",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'float', 'fill_na': 0, 'na_value': 0, 'name': ['I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9', 'I10', 'I11', 'I12', 'I13'], 'preprocess': 'convert_to_bucket', 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'fill_na': '', 'na_value': '', 'name': ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20', 'C21', 'C22', 'C23', 'C24', 'C25', 'C26'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "3",
+    "group_id": "None",
+    "hidden_activations": "relu",
+    "hidden_units": "[400, 400, 400]",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "10",
+    "model": "MLP",
+    "model_id": "MLP_Criteo_004_6a85cb32",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_student": "5",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/Criteo_x4_10_h5/test.h5",
+    "train_data": "../../../data/Criteo_x4_10_h5/train.h5",
+    "use_features": "None",
+    "valid_data": "../../../data/Criteo_x4_10_h5/valid.h5",
+    "verbose": "1"
+}
+2024-09-15 00:31:28,498 P1559536 INFO Load feature_map from json: ../../../data/Criteo_x4_10_h5/feature_map.json
+2024-09-15 00:31:28,499 P1559536 INFO Set column index...
+2024-09-15 00:31:28,499 P1559536 INFO Feature specs: {
+    "C1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 1445, 'vocab_size': 1446}",
+    "C10": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 39529, 'vocab_size': 39530}",
+    "C11": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 5130, 'vocab_size': 5131}",
+    "C12": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 156655, 'vocab_size': 156656}",
+    "C13": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3175, 'vocab_size': 3176}",
+    "C14": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 27, 'vocab_size': 28}",
+    "C15": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 11042, 'vocab_size': 11043}",
+    "C16": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 148912, 'vocab_size': 148913}",
+    "C17": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 11, 'vocab_size': 12}",
+    "C18": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4559, 'vocab_size': 4560}",
+    "C19": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 2002, 'vocab_size': 2003}",
+    "C2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 553, 'vocab_size': 554}",
+    "C20": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}",
+    "C21": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 154563, 'vocab_size': 154564}",
+    "C22": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 17, 'vocab_size': 18}",
+    "C23": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 16, 'vocab_size': 17}",
+    "C24": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 53030, 'vocab_size': 53031}",
+    "C25": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 81, 'vocab_size': 82}",
+    "C26": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 40954, 'vocab_size': 40955}",
+    "C3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 157338, 'vocab_size': 157339}",
+    "C4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 117821, 'vocab_size': 117822}",
+    "C5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 305, 'vocab_size': 306}",
+    "C6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 17, 'vocab_size': 18}",
+    "C7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 11881, 'vocab_size': 11882}",
+    "C8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 629, 'vocab_size': 630}",
+    "C9": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}",
+    "I1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 43, 'vocab_size': 44}",
+    "I10": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 5, 'vocab_size': 6}",
+    "I11": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 26, 'vocab_size': 27}",
+    "I12": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 36, 'vocab_size': 37}",
+    "I13": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 71, 'vocab_size': 72}",
+    "I2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 98, 'vocab_size': 99}",
+    "I3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 121, 'vocab_size': 122}",
+    "I4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 40, 'vocab_size': 41}",
+    "I5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 219, 'vocab_size': 220}",
+    "I6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 111, 'vocab_size': 112}",
+    "I7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 79, 'vocab_size': 80}",
+    "I8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 68, 'vocab_size': 69}",
+    "I9": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 91, 'vocab_size': 92}"
+}
+2024-09-15 00:31:31,710 P1559536 INFO Total number of parameters: 17439957.
+2024-09-15 00:31:31,710 P1559536 INFO Loading data...
+2024-09-15 00:31:31,710 P1559536 INFO Loading data from h5: ../../../data/Criteo_x4_10_h5/train.h5
+2024-09-15 00:31:57,529 P1559536 INFO Train samples: total/36672493, blocks/1
+2024-09-15 00:31:57,529 P1559536 INFO Loading data from h5: ../../../data/Criteo_x4_10_h5/valid.h5
+2024-09-15 00:32:00,719 P1559536 INFO Validation samples: total/4584062, blocks/1
+2024-09-15 00:32:00,719 P1559536 INFO Loading train and validation data done.
+2024-09-15 00:32:00,719 P1559536 INFO Start training: 3668 batches/epoch
+2024-09-15 00:32:00,719 P1559536 INFO ************ Epoch=1 start ************
+2024-09-15 00:36:54,440 P1559536 INFO Train loss: 0.459144
+2024-09-15 00:36:54,440 P1559536 INFO Evaluation @epoch 1 - batch 3668: 
+2024-09-15 00:37:05,678 P1559536 INFO Student 1: [Metrics] AUC: 0.790212 - logloss: 0.463968
+2024-09-15 00:37:08,731 P1559536 INFO Student 2: [Metrics] AUC: 0.786711 - logloss: 0.466011
+2024-09-15 00:37:11,840 P1559536 INFO Student 3: [Metrics] AUC: 0.780350 - logloss: 0.476883
+2024-09-15 00:37:14,944 P1559536 INFO Student 4: [Metrics] AUC: 0.786603 - logloss: 0.466654
+2024-09-15 00:37:18,082 P1559536 INFO Student 5: [Metrics] AUC: 0.788507 - logloss: 0.468032
+2024-09-15 00:37:21,246 P1559536 INFO Teacher: [Metrics] AUC: 0.806247 - logloss: 0.445251
+2024-09-15 00:37:21,544 P1559536 INFO Save best model: monitor(max)=0.806247
+2024-09-15 00:37:21,740 P1559536 INFO ************ Epoch=1 end ************
+2024-09-15 00:41:54,590 P1559536 INFO Train loss: 0.452992
+2024-09-15 00:41:54,590 P1559536 INFO Evaluation @epoch 2 - batch 3668: 
+2024-09-15 00:42:06,032 P1559536 INFO Student 1: [Metrics] AUC: 0.785822 - logloss: 0.465701
+2024-09-15 00:42:09,059 P1559536 INFO Student 2: [Metrics] AUC: 0.786771 - logloss: 0.466766
+2024-09-15 00:42:12,086 P1559536 INFO Student 3: [Metrics] AUC: 0.778591 - logloss: 0.476724
+2024-09-15 00:42:15,078 P1559536 INFO Student 4: [Metrics] AUC: 0.787242 - logloss: 0.465049
+2024-09-15 00:42:18,112 P1559536 INFO Student 5: [Metrics] AUC: 0.783526 - logloss: 0.473075
+2024-09-15 00:42:21,130 P1559536 INFO Teacher: [Metrics] AUC: 0.808186 - logloss: 0.443326
+2024-09-15 00:42:21,530 P1559536 INFO Save best model: monitor(max)=0.808186
+2024-09-15 00:42:22,002 P1559536 INFO ************ Epoch=2 end ************
+2024-09-15 00:47:00,936 P1559536 INFO Train loss: 0.451346
+2024-09-15 00:47:00,936 P1559536 INFO Evaluation @epoch 3 - batch 3668: 
+2024-09-15 00:47:11,999 P1559536 INFO Student 1: [Metrics] AUC: 0.782456 - logloss: 0.467629
+2024-09-15 00:47:15,159 P1559536 INFO Student 2: [Metrics] AUC: 0.785227 - logloss: 0.470093
+2024-09-15 00:47:18,307 P1559536 INFO Student 3: [Metrics] AUC: 0.776346 - logloss: 0.477742
+2024-09-15 00:47:21,465 P1559536 INFO Student 4: [Metrics] AUC: 0.783059 - logloss: 0.472891
+2024-09-15 00:47:24,640 P1559536 INFO Student 5: [Metrics] AUC: 0.784758 - logloss: 0.469132
+2024-09-15 00:47:27,797 P1559536 INFO Teacher: [Metrics] AUC: 0.809534 - logloss: 0.442021
+2024-09-15 00:47:28,160 P1559536 INFO Save best model: monitor(max)=0.809534
+2024-09-15 00:47:28,609 P1559536 INFO ************ Epoch=3 end ************
+2024-09-15 00:52:15,996 P1559536 INFO Train loss: 0.450046
+2024-09-15 00:52:15,996 P1559536 INFO Evaluation @epoch 4 - batch 3668: 
+2024-09-15 00:52:27,264 P1559536 INFO Student 1: [Metrics] AUC: 0.779304 - logloss: 0.471635
+2024-09-15 00:52:30,477 P1559536 INFO Student 2: [Metrics] AUC: 0.784344 - logloss: 0.469522
+2024-09-15 00:52:33,689 P1559536 INFO Student 3: [Metrics] AUC: 0.772963 - logloss: 0.481168
+2024-09-15 00:52:36,857 P1559536 INFO Student 4: [Metrics] AUC: 0.780340 - logloss: 0.475276
+2024-09-15 00:52:40,055 P1559536 INFO Student 5: [Metrics] AUC: 0.783537 - logloss: 0.475133
+2024-09-15 00:52:43,245 P1559536 INFO Teacher: [Metrics] AUC: 0.810396 - logloss: 0.441390
+2024-09-15 00:52:43,649 P1559536 INFO Save best model: monitor(max)=0.810396
+2024-09-15 00:52:44,160 P1559536 INFO ************ Epoch=4 end ************
+2024-09-15 00:57:24,840 P1559536 INFO Train loss: 0.449058
+2024-09-15 00:57:24,841 P1559536 INFO Evaluation @epoch 5 - batch 3668: 
+2024-09-15 00:57:35,631 P1559536 INFO Student 1: [Metrics] AUC: 0.781924 - logloss: 0.473382
+2024-09-15 00:57:38,629 P1559536 INFO Student 2: [Metrics] AUC: 0.783586 - logloss: 0.472483
+2024-09-15 00:57:41,632 P1559536 INFO Student 3: [Metrics] AUC: 0.773746 - logloss: 0.481236
+2024-09-15 00:57:44,633 P1559536 INFO Student 4: [Metrics] AUC: 0.784124 - logloss: 0.470498
+2024-09-15 00:57:47,670 P1559536 INFO Student 5: [Metrics] AUC: 0.783211 - logloss: 0.474901
+2024-09-15 00:57:50,699 P1559536 INFO Teacher: [Metrics] AUC: 0.811043 - logloss: 0.440665
+2024-09-15 00:57:51,004 P1559536 INFO Save best model: monitor(max)=0.811043
+2024-09-15 00:57:51,471 P1559536 INFO ************ Epoch=5 end ************
+2024-09-15 01:02:37,399 P1559536 INFO Train loss: 0.448261
+2024-09-15 01:02:37,399 P1559536 INFO Evaluation @epoch 6 - batch 3668: 
+2024-09-15 01:02:48,756 P1559536 INFO Student 1: [Metrics] AUC: 0.780560 - logloss: 0.472745
+2024-09-15 01:02:51,816 P1559536 INFO Student 2: [Metrics] AUC: 0.782612 - logloss: 0.472279
+2024-09-15 01:02:54,962 P1559536 INFO Student 3: [Metrics] AUC: 0.771582 - logloss: 0.483822
+2024-09-15 01:02:58,092 P1559536 INFO Student 4: [Metrics] AUC: 0.782935 - logloss: 0.473497
+2024-09-15 01:03:01,249 P1559536 INFO Student 5: [Metrics] AUC: 0.780258 - logloss: 0.478768
+2024-09-15 01:03:04,325 P1559536 INFO Teacher: [Metrics] AUC: 0.811121 - logloss: 0.440533
+2024-09-15 01:03:04,630 P1559536 INFO Save best model: monitor(max)=0.811121
+2024-09-15 01:03:05,130 P1559536 INFO ************ Epoch=6 end ************
+2024-09-15 01:07:36,780 P1559536 INFO Train loss: 0.447575
+2024-09-15 01:07:36,781 P1559536 INFO Evaluation @epoch 7 - batch 3668: 
+2024-09-15 01:07:48,240 P1559536 INFO Student 1: [Metrics] AUC: 0.778221 - logloss: 0.475299
+2024-09-15 01:07:51,254 P1559536 INFO Student 2: [Metrics] AUC: 0.778570 - logloss: 0.476803
+2024-09-15 01:07:54,301 P1559536 INFO Student 3: [Metrics] AUC: 0.770436 - logloss: 0.487422
+2024-09-15 01:07:57,332 P1559536 INFO Student 4: [Metrics] AUC: 0.782000 - logloss: 0.477182
+2024-09-15 01:08:00,371 P1559536 INFO Student 5: [Metrics] AUC: 0.780818 - logloss: 0.477350
+2024-09-15 01:08:03,408 P1559536 INFO Teacher: [Metrics] AUC: 0.811337 - logloss: 0.440426
+2024-09-15 01:08:03,734 P1559536 INFO Save best model: monitor(max)=0.811337
+2024-09-15 01:08:04,229 P1559536 INFO ************ Epoch=7 end ************
+2024-09-15 01:12:42,769 P1559536 INFO Train loss: 0.446944
+2024-09-15 01:12:42,769 P1559536 INFO Evaluation @epoch 8 - batch 3668: 
+2024-09-15 01:12:53,790 P1559536 INFO Student 1: [Metrics] AUC: 0.776163 - logloss: 0.478558
+2024-09-15 01:12:56,882 P1559536 INFO Student 2: [Metrics] AUC: 0.779073 - logloss: 0.478260
+2024-09-15 01:13:00,001 P1559536 INFO Student 3: [Metrics] AUC: 0.766905 - logloss: 0.490590
+2024-09-15 01:13:03,026 P1559536 INFO Student 4: [Metrics] AUC: 0.780220 - logloss: 0.480433
+2024-09-15 01:13:06,073 P1559536 INFO Student 5: [Metrics] AUC: 0.779762 - logloss: 0.481517
+2024-09-15 01:13:09,200 P1559536 INFO Teacher: [Metrics] AUC: 0.811296 - logloss: 0.440468
+2024-09-15 01:13:09,597 P1559536 INFO Monitor(max)=0.811296 STOP!
+2024-09-15 01:13:09,597 P1559536 INFO Reduce learning rate on plateau: 0.000100
+2024-09-15 01:13:09,716 P1559536 INFO ************ Epoch=8 end ************
+2024-09-15 01:17:49,141 P1559536 INFO Train loss: 0.434317
+2024-09-15 01:17:49,142 P1559536 INFO Evaluation @epoch 9 - batch 3668: 
+2024-09-15 01:18:00,445 P1559536 INFO Student 1: [Metrics] AUC: 0.770739 - logloss: 0.489827
+2024-09-15 01:18:03,590 P1559536 INFO Student 2: [Metrics] AUC: 0.772987 - logloss: 0.489787
+2024-09-15 01:18:06,742 P1559536 INFO Student 3: [Metrics] AUC: 0.760292 - logloss: 0.508665
+2024-09-15 01:18:09,899 P1559536 INFO Student 4: [Metrics] AUC: 0.773114 - logloss: 0.493641
+2024-09-15 01:18:13,069 P1559536 INFO Student 5: [Metrics] AUC: 0.774879 - logloss: 0.492767
+2024-09-15 01:18:16,230 P1559536 INFO Teacher: [Metrics] AUC: 0.813239 - logloss: 0.439198
+2024-09-15 01:18:16,575 P1559536 INFO Save best model: monitor(max)=0.813239
+2024-09-15 01:18:17,041 P1559536 INFO ************ Epoch=9 end ************
+2024-09-15 01:22:55,176 P1559536 INFO Train loss: 0.429131
+2024-09-15 01:22:55,176 P1559536 INFO Evaluation @epoch 10 - batch 3668: 
+2024-09-15 01:23:06,043 P1559536 INFO Student 1: [Metrics] AUC: 0.766746 - logloss: 0.496795
+2024-09-15 01:23:09,062 P1559536 INFO Student 2: [Metrics] AUC: 0.769601 - logloss: 0.497118
+2024-09-15 01:23:12,082 P1559536 INFO Student 3: [Metrics] AUC: 0.756282 - logloss: 0.516956
+2024-09-15 01:23:15,183 P1559536 INFO Student 4: [Metrics] AUC: 0.768947 - logloss: 0.501034
+2024-09-15 01:23:18,344 P1559536 INFO Student 5: [Metrics] AUC: 0.771101 - logloss: 0.498881
+2024-09-15 01:23:21,497 P1559536 INFO Teacher: [Metrics] AUC: 0.812958 - logloss: 0.439701
+2024-09-15 01:23:21,907 P1559536 INFO Monitor(max)=0.812958 STOP!
+2024-09-15 01:23:21,907 P1559536 INFO Reduce learning rate on plateau: 0.000010
+2024-09-15 01:23:22,027 P1559536 INFO ************ Epoch=10 end ************
+2024-09-15 01:28:02,193 P1559536 INFO Train loss: 0.424252
+2024-09-15 01:28:02,194 P1559536 INFO Evaluation @epoch 11 - batch 3668: 
+2024-09-15 01:28:14,759 P1559536 INFO Student 1: [Metrics] AUC: 0.764252 - logloss: 0.502875
+2024-09-15 01:28:17,877 P1559536 INFO Student 2: [Metrics] AUC: 0.767152 - logloss: 0.502737
+2024-09-15 01:28:20,991 P1559536 INFO Student 3: [Metrics] AUC: 0.753666 - logloss: 0.526873
+2024-09-15 01:28:24,068 P1559536 INFO Student 4: [Metrics] AUC: 0.766365 - logloss: 0.508564
+2024-09-15 01:28:27,168 P1559536 INFO Student 5: [Metrics] AUC: 0.769748 - logloss: 0.503414
+2024-09-15 01:28:30,256 P1559536 INFO Teacher: [Metrics] AUC: 0.812489 - logloss: 0.440800
+2024-09-15 01:28:30,682 P1559536 INFO Monitor(max)=0.812489 STOP!
+2024-09-15 01:28:30,682 P1559536 INFO Reduce learning rate on plateau: 0.000001
+2024-09-15 01:28:30,682 P1559536 INFO ********* Epoch==11 early stop *********
+2024-09-15 01:28:30,798 P1559536 INFO Training finished.
+2024-09-15 01:28:30,798 P1559536 INFO Load best model: /mnt/public/lhh/code/model_zoo/EKTF/EKTF_torch/checkpoints/Criteo_x4_10_h5/MLP_Criteo_004_6a85cb32.model
+2024-09-15 01:28:30,856 P1559536 INFO ****** Validation evaluation ******
+2024-09-15 01:28:42,453 P1559536 INFO Student 1: [Metrics] logloss: 0.489827 - AUC: 0.770739
+2024-09-15 01:28:45,604 P1559536 INFO Student 2: [Metrics] logloss: 0.489787 - AUC: 0.772987
+2024-09-15 01:28:48,653 P1559536 INFO Student 3: [Metrics] logloss: 0.508665 - AUC: 0.760292
+2024-09-15 01:28:51,693 P1559536 INFO Student 4: [Metrics] logloss: 0.493641 - AUC: 0.773114
+2024-09-15 01:28:54,867 P1559536 INFO Student 5: [Metrics] logloss: 0.492767 - AUC: 0.774879
+2024-09-15 01:28:58,021 P1559536 INFO Teacher: [Metrics] logloss: 0.439198 - AUC: 0.813239
+2024-09-15 01:28:58,497 P1559536 INFO ******** Test evaluation ********
+2024-09-15 01:28:58,497 P1559536 INFO Loading data...
+2024-09-15 01:28:58,497 P1559536 INFO Loading data from h5: ../../../data/Criteo_x4_10_h5/test.h5
+2024-09-15 01:29:01,628 P1559536 INFO Test samples: total/4584062, blocks/1
+2024-09-15 01:29:01,628 P1559536 INFO Loading test data done.
+2024-09-15 01:29:12,609 P1559536 INFO Student 1: [Metrics] logloss: 0.489759 - AUC: 0.770933
+2024-09-15 01:29:15,547 P1559536 INFO Student 2: [Metrics] logloss: 0.489182 - AUC: 0.773606
+2024-09-15 01:29:18,546 P1559536 INFO Student 3: [Metrics] logloss: 0.508034 - AUC: 0.760927
+2024-09-15 01:29:21,514 P1559536 INFO Student 4: [Metrics] logloss: 0.492963 - AUC: 0.773882
+2024-09-15 01:29:24,471 P1559536 INFO Student 5: [Metrics] logloss: 0.492143 - AUC: 0.775464
+2024-09-15 01:29:27,454 P1559536 INFO Teacher: [Metrics] logloss: 0.438780 - AUC: 0.813756

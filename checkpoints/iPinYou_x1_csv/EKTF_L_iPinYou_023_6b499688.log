@@ -1,0 +1,178 @@
+2024-09-24 02:09:47,111 P2514044 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "iPinYou_x1_csv",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.001",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['weekday', 'hour', 'IP', 'region', 'city', 'adexchange', 'domain', 'slotid', 'slotwidth', 'slotheight', 'slotvisibility', 'slotformat', 'creative', 'advertiser', 'useragent', 'slotprice'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "2",
+    "group_id": "None",
+    "hidden_activations": "relu",
+    "hidden_units": "[400, 400, 400]",
+    "label_col": "{'dtype': 'float', 'name': 'click'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "EKTF_L",
+    "model_id": "EKTF_L_iPinYou_023_6b499688",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net1_dropout": "0.3",
+    "net2_dropout": "0.2",
+    "net3_dropout": "0.2",
+    "net_regularizer": "0",
+    "num_cross_layers": "3",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/iPinYou/test.csv",
+    "train_data": "../../../data/iPinYou/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/iPinYou/test.csv",
+    "verbose": "1"
+}
+2024-09-24 02:09:47,111 P2514044 INFO Set up feature processor...
+2024-09-24 02:09:47,112 P2514044 WARNING Skip rebuilding ../../../data/iPinYou_x1_csv/feature_map.json. Please delete it manually if rebuilding is required.
+2024-09-24 02:09:47,112 P2514044 INFO Load feature_map from json: ../../../data/iPinYou_x1_csv/feature_map.json
+2024-09-24 02:09:47,112 P2514044 INFO Set column index...
+2024-09-24 02:09:47,112 P2514044 INFO Feature specs: {
+    "IP": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 585532, 'vocab_size': 585533}",
+    "adexchange": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "advertiser": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 10, 'vocab_size': 11}",
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 371, 'vocab_size': 372}",
+    "creative": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 132, 'vocab_size': 133}",
+    "domain": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 28622, 'vocab_size': 28623}",
+    "hour": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 25, 'vocab_size': 26}",
+    "region": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 36, 'vocab_size': 37}",
+    "slotformat": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 5, 'vocab_size': 6}",
+    "slotheight": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 15, 'vocab_size': 16}",
+    "slotid": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 50906, 'vocab_size': 50907}",
+    "slotprice": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "slotvisibility": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 12, 'vocab_size': 13}",
+    "slotwidth": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "useragent": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 41, 'vocab_size': 42}",
+    "weekday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}"
+}
+2024-09-24 02:09:50,629 P2514044 INFO Total number of parameters: 11755817.
+2024-09-24 02:09:50,629 P2514044 INFO Loading data...
+2024-09-24 02:09:50,629 P2514044 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/train.h5
+2024-09-24 02:09:54,579 P2514044 INFO Train samples: total/15395258, blocks/1
+2024-09-24 02:09:54,579 P2514044 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/valid.h5
+2024-09-24 02:09:55,684 P2514044 INFO Validation samples: total/4100716, blocks/1
+2024-09-24 02:09:55,684 P2514044 INFO Loading train and validation data done.
+2024-09-24 02:09:55,684 P2514044 INFO Start training: 3759 batches/epoch
+2024-09-24 02:09:55,685 P2514044 INFO ************ Epoch=1 start ************
+2024-09-24 02:13:13,161 P2514044 INFO Train loss: 0.009140
+2024-09-24 02:13:13,162 P2514044 INFO Evaluation @epoch 1 - batch 3759: 
+2024-09-24 02:13:25,677 P2514044 INFO Student 1: [Metrics] AUC: 0.752222 - logloss: 0.005680
+2024-09-24 02:13:28,090 P2514044 INFO Student 2: [Metrics] AUC: 0.746767 - logloss: 0.005666
+2024-09-24 02:13:30,495 P2514044 INFO Student 3: [Metrics] AUC: 0.744496 - logloss: 0.005704
+2024-09-24 02:13:32,894 P2514044 INFO Teacher: [Metrics] AUC: 0.751284 - logloss: 0.005662
+2024-09-24 02:13:33,138 P2514044 INFO Save best model: monitor(max)=0.751284
+2024-09-24 02:13:33,291 P2514044 INFO ************ Epoch=1 end ************
+2024-09-24 02:16:44,709 P2514044 INFO Train loss: 0.006283
+2024-09-24 02:16:44,709 P2514044 INFO Evaluation @epoch 2 - batch 3759: 
+2024-09-24 02:16:56,575 P2514044 INFO Student 1: [Metrics] AUC: 0.748791 - logloss: 0.005672
+2024-09-24 02:16:58,984 P2514044 INFO Student 2: [Metrics] AUC: 0.748754 - logloss: 0.005669
+2024-09-24 02:17:01,385 P2514044 INFO Student 3: [Metrics] AUC: 0.746122 - logloss: 0.005685
+2024-09-24 02:17:03,781 P2514044 INFO Teacher: [Metrics] AUC: 0.750757 - logloss: 0.005661
+2024-09-24 02:17:04,020 P2514044 INFO Monitor(max)=0.750757 STOP!
+2024-09-24 02:17:04,020 P2514044 INFO Reduce learning rate on plateau: 0.000100
+2024-09-24 02:17:04,149 P2514044 INFO ************ Epoch=2 end ************
+2024-09-24 02:20:13,037 P2514044 INFO Train loss: 0.005884
+2024-09-24 02:20:13,038 P2514044 INFO Evaluation @epoch 3 - batch 3759: 
+2024-09-24 02:20:25,868 P2514044 INFO Student 1: [Metrics] AUC: 0.777215 - logloss: 0.005561
+2024-09-24 02:20:28,273 P2514044 INFO Student 2: [Metrics] AUC: 0.777817 - logloss: 0.005559
+2024-09-24 02:20:30,665 P2514044 INFO Student 3: [Metrics] AUC: 0.776099 - logloss: 0.005574
+2024-09-24 02:20:33,067 P2514044 INFO Teacher: [Metrics] AUC: 0.778788 - logloss: 0.005557
+2024-09-24 02:20:33,313 P2514044 INFO Save best model: monitor(max)=0.778788
+2024-09-24 02:20:33,714 P2514044 INFO ************ Epoch=3 end ************
+2024-09-24 02:23:49,757 P2514044 INFO Train loss: 0.005838
+2024-09-24 02:23:49,758 P2514044 INFO Evaluation @epoch 4 - batch 3759: 
+2024-09-24 02:24:01,950 P2514044 INFO Student 1: [Metrics] AUC: 0.776724 - logloss: 0.005560
+2024-09-24 02:24:04,355 P2514044 INFO Student 2: [Metrics] AUC: 0.777993 - logloss: 0.005562
+2024-09-24 02:24:06,767 P2514044 INFO Student 3: [Metrics] AUC: 0.776511 - logloss: 0.005574
+2024-09-24 02:24:09,191 P2514044 INFO Teacher: [Metrics] AUC: 0.778618 - logloss: 0.005557
+2024-09-24 02:24:09,437 P2514044 INFO Monitor(max)=0.778618 STOP!
+2024-09-24 02:24:09,437 P2514044 INFO Reduce learning rate on plateau: 0.000010
+2024-09-24 02:24:09,565 P2514044 INFO ************ Epoch=4 end ************
+2024-09-24 02:27:16,139 P2514044 INFO Train loss: 0.005721
+2024-09-24 02:27:16,139 P2514044 INFO Evaluation @epoch 5 - batch 3759: 
+2024-09-24 02:27:27,544 P2514044 INFO Student 1: [Metrics] AUC: 0.781887 - logloss: 0.005546
+2024-09-24 02:27:29,919 P2514044 INFO Student 2: [Metrics] AUC: 0.783656 - logloss: 0.005541
+2024-09-24 02:27:32,291 P2514044 INFO Student 3: [Metrics] AUC: 0.780045 - logloss: 0.005555
+2024-09-24 02:27:34,668 P2514044 INFO Teacher: [Metrics] AUC: 0.783161 - logloss: 0.005540
+2024-09-24 02:27:34,814 P2514044 INFO Save best model: monitor(max)=0.783161
+2024-09-24 02:27:35,199 P2514044 INFO ************ Epoch=5 end ************
+2024-09-24 02:30:53,856 P2514044 INFO Train loss: 0.005684
+2024-09-24 02:30:53,856 P2514044 INFO Evaluation @epoch 6 - batch 3759: 
+2024-09-24 02:31:07,809 P2514044 INFO Student 1: [Metrics] AUC: 0.783125 - logloss: 0.005542
+2024-09-24 02:31:10,243 P2514044 INFO Student 2: [Metrics] AUC: 0.784872 - logloss: 0.005537
+2024-09-24 02:31:12,663 P2514044 INFO Student 3: [Metrics] AUC: 0.781819 - logloss: 0.005550
+2024-09-24 02:31:15,069 P2514044 INFO Teacher: [Metrics] AUC: 0.784605 - logloss: 0.005535
+2024-09-24 02:31:15,327 P2514044 INFO Save best model: monitor(max)=0.784605
+2024-09-24 02:31:15,726 P2514044 INFO ************ Epoch=6 end ************
+2024-09-24 02:34:37,998 P2514044 INFO Train loss: 0.005663
+2024-09-24 02:34:37,999 P2514044 INFO Evaluation @epoch 7 - batch 3759: 
+2024-09-24 02:34:49,855 P2514044 INFO Student 1: [Metrics] AUC: 0.782018 - logloss: 0.005548
+2024-09-24 02:34:52,176 P2514044 INFO Student 2: [Metrics] AUC: 0.784415 - logloss: 0.005540
+2024-09-24 02:34:54,498 P2514044 INFO Student 3: [Metrics] AUC: 0.782870 - logloss: 0.005546
+2024-09-24 02:34:56,817 P2514044 INFO Teacher: [Metrics] AUC: 0.784646 - logloss: 0.005534
+2024-09-24 02:34:56,965 P2514044 INFO Save best model: monitor(max)=0.784646
+2024-09-24 02:34:57,300 P2514044 INFO ************ Epoch=7 end ************
+2024-09-24 02:37:58,176 P2514044 INFO Train loss: 0.005647
+2024-09-24 02:37:58,176 P2514044 INFO Evaluation @epoch 8 - batch 3759: 
+2024-09-24 02:38:13,135 P2514044 INFO Student 1: [Metrics] AUC: 0.781872 - logloss: 0.005549
+2024-09-24 02:38:15,614 P2514044 INFO Student 2: [Metrics] AUC: 0.783765 - logloss: 0.005542
+2024-09-24 02:38:18,069 P2514044 INFO Student 3: [Metrics] AUC: 0.783602 - logloss: 0.005541
+2024-09-24 02:38:20,508 P2514044 INFO Teacher: [Metrics] AUC: 0.784837 - logloss: 0.005530
+2024-09-24 02:38:20,770 P2514044 INFO Save best model: monitor(max)=0.784837
+2024-09-24 02:38:21,205 P2514044 INFO ************ Epoch=8 end ************
+2024-09-24 02:41:23,558 P2514044 INFO Train loss: 0.005612
+2024-09-24 02:41:23,558 P2514044 INFO Evaluation @epoch 9 - batch 3759: 
+2024-09-24 02:41:38,403 P2514044 INFO Student 1: [Metrics] AUC: 0.776979 - logloss: 0.005580
+2024-09-24 02:41:40,861 P2514044 INFO Student 2: [Metrics] AUC: 0.778497 - logloss: 0.005569
+2024-09-24 02:41:43,292 P2514044 INFO Student 3: [Metrics] AUC: 0.783371 - logloss: 0.005540
+2024-09-24 02:41:45,729 P2514044 INFO Teacher: [Metrics] AUC: 0.781391 - logloss: 0.005545
+2024-09-24 02:41:45,992 P2514044 INFO Monitor(max)=0.781391 STOP!
+2024-09-24 02:41:45,992 P2514044 INFO Reduce learning rate on plateau: 0.000001
+2024-09-24 02:41:46,134 P2514044 INFO ************ Epoch=9 end ************
+2024-09-24 02:44:52,777 P2514044 INFO Train loss: 0.005439
+2024-09-24 02:44:52,777 P2514044 INFO Evaluation @epoch 10 - batch 3759: 
+2024-09-24 02:45:04,436 P2514044 INFO Student 1: [Metrics] AUC: 0.773712 - logloss: 0.005612
+2024-09-24 02:45:06,809 P2514044 INFO Student 2: [Metrics] AUC: 0.775534 - logloss: 0.005602
+2024-09-24 02:45:09,188 P2514044 INFO Student 3: [Metrics] AUC: 0.783008 - logloss: 0.005543
+2024-09-24 02:45:11,573 P2514044 INFO Teacher: [Metrics] AUC: 0.779594 - logloss: 0.005557
+2024-09-24 02:45:11,827 P2514044 INFO Monitor(max)=0.779594 STOP!
+2024-09-24 02:45:11,827 P2514044 INFO Reduce learning rate on plateau: 0.000001
+2024-09-24 02:45:11,827 P2514044 INFO ********* Epoch==10 early stop *********
+2024-09-24 02:45:11,948 P2514044 INFO Training finished.
+2024-09-24 02:45:11,948 P2514044 INFO Load best model: /mnt/public/lhh/code/model_zoo/AKD/AKD_torch/checkpoints/iPinYou_x1_csv/EKTF_L_iPinYou_023_6b499688.model
+2024-09-24 02:45:11,976 P2514044 INFO ****** Validation evaluation ******
+2024-09-24 02:45:23,196 P2514044 INFO Student 1: [Metrics] logloss: 0.005549 - AUC: 0.781872
+2024-09-24 02:45:25,658 P2514044 INFO Student 2: [Metrics] logloss: 0.005542 - AUC: 0.783765
+2024-09-24 02:45:28,111 P2514044 INFO Student 3: [Metrics] logloss: 0.005541 - AUC: 0.783602
+2024-09-24 02:45:30,575 P2514044 INFO Teacher: [Metrics] logloss: 0.005530 - AUC: 0.784837
+2024-09-24 02:45:30,871 P2514044 INFO ******** Test evaluation ********
+2024-09-24 02:45:30,871 P2514044 INFO Loading data...
+2024-09-24 02:45:30,871 P2514044 INFO Loading data from h5: ../../../data/iPinYou_x1_csv/test.h5
+2024-09-24 02:45:31,898 P2514044 INFO Test samples: total/4100716, blocks/1
+2024-09-24 02:45:31,899 P2514044 INFO Loading test data done.
+2024-09-24 02:45:43,890 P2514044 INFO Student 1: [Metrics] logloss: 0.005549 - AUC: 0.781872
+2024-09-24 02:45:46,398 P2514044 INFO Student 2: [Metrics] logloss: 0.005542 - AUC: 0.783765
+2024-09-24 02:45:48,879 P2514044 INFO Student 3: [Metrics] logloss: 0.005541 - AUC: 0.783602
+2024-09-24 02:45:51,341 P2514044 INFO Teacher: [Metrics] logloss: 0.005530 - AUC: 0.784837

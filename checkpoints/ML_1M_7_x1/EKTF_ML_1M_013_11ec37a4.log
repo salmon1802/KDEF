@@ -1,0 +1,235 @@
+2024-09-21 00:02:37,228 P116667 INFO Params: {
+    "batch_norm": "True",
+    "batch_size": "4096",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "ML_1M_7_x1",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID', 'Release'], 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 5, 'name': 'Genres', 'splitter': '^', 'type': 'sequence'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "1",
+    "group_id": "None",
+    "hidden_activations": "relu",
+    "hidden_units": "[400, 400, 400]",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "1",
+    "model": "EKTF",
+    "model_id": "EKTF_ML_1M_013_11ec37a4",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_student": "6",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/ML_1M/test.csv",
+    "train_data": "../../../data/ML_1M/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/ML_1M/valid.csv",
+    "verbose": "1"
+}
+2024-09-21 00:02:37,228 P116667 INFO Set up feature processor...
+2024-09-21 00:02:37,229 P116667 WARNING Skip rebuilding ../../../data/ML_1M_7_x1/feature_map.json. Please delete it manually if rebuilding is required.
+2024-09-21 00:02:37,229 P116667 INFO Load feature_map from json: ../../../data/ML_1M_7_x1/feature_map.json
+2024-09-21 00:02:37,229 P116667 INFO Set column index...
+2024-09-21 00:02:37,229 P116667 INFO Feature specs: {
+    "Age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "Gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "Genres": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 19, 'vocab_size': 20, 'max_len': 5}",
+    "MovieID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3642, 'vocab_size': 3643}",
+    "Occupation": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "Release": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 9, 'vocab_size': 10}",
+    "UserID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6041, 'vocab_size': 6042}"
+}
+2024-09-21 00:02:41,339 P116667 INFO Total number of parameters: 2368822.
+2024-09-21 00:02:41,339 P116667 INFO Loading data...
+2024-09-21 00:02:41,339 P116667 INFO Loading data from h5: ../../../data/ML_1M_7_x1/train.h5
+2024-09-21 00:02:41,410 P116667 INFO Train samples: total/591209, blocks/1
+2024-09-21 00:02:41,410 P116667 INFO Loading data from h5: ../../../data/ML_1M_7_x1/valid.h5
+2024-09-21 00:02:41,417 P116667 INFO Validation samples: total/73901, blocks/1
+2024-09-21 00:02:41,417 P116667 INFO Loading train and validation data done.
+2024-09-21 00:02:41,417 P116667 INFO Start training: 145 batches/epoch
+2024-09-21 00:02:41,417 P116667 INFO ************ Epoch=1 start ************
+2024-09-21 00:03:26,185 P116667 INFO Train loss: 0.409748
+2024-09-21 00:03:26,185 P116667 INFO Evaluation @epoch 1 - batch 145: 
+2024-09-21 00:03:27,419 P116667 INFO Student 1: [Metrics] AUC: 0.874741 - logloss: 0.341974
+2024-09-21 00:03:27,481 P116667 INFO Student 2: [Metrics] AUC: 0.874876 - logloss: 0.341703
+2024-09-21 00:03:27,540 P116667 INFO Student 3: [Metrics] AUC: 0.875060 - logloss: 0.341866
+2024-09-21 00:03:27,603 P116667 INFO Student 4: [Metrics] AUC: 0.875121 - logloss: 0.342085
+2024-09-21 00:03:27,663 P116667 INFO Student 5: [Metrics] AUC: 0.875107 - logloss: 0.342990
+2024-09-21 00:03:27,723 P116667 INFO Student 6: [Metrics] AUC: 0.874861 - logloss: 0.342268
+2024-09-21 00:03:27,782 P116667 INFO Teacher: [Metrics] AUC: 0.875732 - logloss: 0.341096
+2024-09-21 00:03:27,790 P116667 INFO Save best model: monitor(max)=0.875732
+2024-09-21 00:03:27,947 P116667 INFO ************ Epoch=1 end ************
+2024-09-21 00:04:12,607 P116667 INFO Train loss: 0.364973
+2024-09-21 00:04:12,607 P116667 INFO Evaluation @epoch 2 - batch 145: 
+2024-09-21 00:04:13,845 P116667 INFO Student 1: [Metrics] AUC: 0.884389 - logloss: 0.330107
+2024-09-21 00:04:13,900 P116667 INFO Student 2: [Metrics] AUC: 0.884532 - logloss: 0.329332
+2024-09-21 00:04:13,955 P116667 INFO Student 3: [Metrics] AUC: 0.884579 - logloss: 0.329322
+2024-09-21 00:04:14,010 P116667 INFO Student 4: [Metrics] AUC: 0.884796 - logloss: 0.329286
+2024-09-21 00:04:14,065 P116667 INFO Student 5: [Metrics] AUC: 0.884605 - logloss: 0.329825
+2024-09-21 00:04:14,120 P116667 INFO Student 6: [Metrics] AUC: 0.884200 - logloss: 0.330336
+2024-09-21 00:04:14,179 P116667 INFO Teacher: [Metrics] AUC: 0.885140 - logloss: 0.328895
+2024-09-21 00:04:14,185 P116667 INFO Save best model: monitor(max)=0.885140
+2024-09-21 00:04:14,333 P116667 INFO ************ Epoch=2 end ************
+2024-09-21 00:04:59,036 P116667 INFO Train loss: 0.357041
+2024-09-21 00:04:59,036 P116667 INFO Evaluation @epoch 3 - batch 145: 
+2024-09-21 00:05:00,215 P116667 INFO Student 1: [Metrics] AUC: 0.891252 - logloss: 0.320709
+2024-09-21 00:05:00,269 P116667 INFO Student 2: [Metrics] AUC: 0.891093 - logloss: 0.320852
+2024-09-21 00:05:00,324 P116667 INFO Student 3: [Metrics] AUC: 0.891264 - logloss: 0.320695
+2024-09-21 00:05:00,378 P116667 INFO Student 4: [Metrics] AUC: 0.891170 - logloss: 0.320926
+2024-09-21 00:05:00,433 P116667 INFO Student 5: [Metrics] AUC: 0.890679 - logloss: 0.321399
+2024-09-21 00:05:00,488 P116667 INFO Student 6: [Metrics] AUC: 0.891084 - logloss: 0.320963
+2024-09-21 00:05:00,543 P116667 INFO Teacher: [Metrics] AUC: 0.891598 - logloss: 0.320269
+2024-09-21 00:05:00,548 P116667 INFO Save best model: monitor(max)=0.891598
+2024-09-21 00:05:00,725 P116667 INFO ************ Epoch=3 end ************
+2024-09-21 00:05:45,454 P116667 INFO Train loss: 0.352684
+2024-09-21 00:05:45,454 P116667 INFO Evaluation @epoch 4 - batch 145: 
+2024-09-21 00:05:46,694 P116667 INFO Student 1: [Metrics] AUC: 0.892952 - logloss: 0.318219
+2024-09-21 00:05:46,750 P116667 INFO Student 2: [Metrics] AUC: 0.893112 - logloss: 0.317882
+2024-09-21 00:05:46,807 P116667 INFO Student 3: [Metrics] AUC: 0.892744 - logloss: 0.318165
+2024-09-21 00:05:46,862 P116667 INFO Student 4: [Metrics] AUC: 0.893022 - logloss: 0.318187
+2024-09-21 00:05:46,917 P116667 INFO Student 5: [Metrics] AUC: 0.892819 - logloss: 0.318263
+2024-09-21 00:05:46,972 P116667 INFO Student 6: [Metrics] AUC: 0.892943 - logloss: 0.318237
+2024-09-21 00:05:47,031 P116667 INFO Teacher: [Metrics] AUC: 0.893375 - logloss: 0.317583
+2024-09-21 00:05:47,037 P116667 INFO Save best model: monitor(max)=0.893375
+2024-09-21 00:05:47,205 P116667 INFO ************ Epoch=4 end ************
+2024-09-21 00:06:32,150 P116667 INFO Train loss: 0.348931
+2024-09-21 00:06:32,150 P116667 INFO Evaluation @epoch 5 - batch 145: 
+2024-09-21 00:06:33,445 P116667 INFO Student 1: [Metrics] AUC: 0.895543 - logloss: 0.314788
+2024-09-21 00:06:33,500 P116667 INFO Student 2: [Metrics] AUC: 0.895460 - logloss: 0.314924
+2024-09-21 00:06:33,555 P116667 INFO Student 3: [Metrics] AUC: 0.895359 - logloss: 0.315045
+2024-09-21 00:06:33,611 P116667 INFO Student 4: [Metrics] AUC: 0.895584 - logloss: 0.314752
+2024-09-21 00:06:33,666 P116667 INFO Student 5: [Metrics] AUC: 0.895173 - logloss: 0.315388
+2024-09-21 00:06:33,721 P116667 INFO Student 6: [Metrics] AUC: 0.895266 - logloss: 0.315284
+2024-09-21 00:06:33,775 P116667 INFO Teacher: [Metrics] AUC: 0.895792 - logloss: 0.314461
+2024-09-21 00:06:33,781 P116667 INFO Save best model: monitor(max)=0.895792
+2024-09-21 00:06:33,930 P116667 INFO ************ Epoch=5 end ************
+2024-09-21 00:07:18,788 P116667 INFO Train loss: 0.347299
+2024-09-21 00:07:18,788 P116667 INFO Evaluation @epoch 6 - batch 145: 
+2024-09-21 00:07:20,240 P116667 INFO Student 1: [Metrics] AUC: 0.897139 - logloss: 0.312384
+2024-09-21 00:07:20,285 P116667 INFO Student 2: [Metrics] AUC: 0.897091 - logloss: 0.312497
+2024-09-21 00:07:20,327 P116667 INFO Student 3: [Metrics] AUC: 0.897145 - logloss: 0.312444
+2024-09-21 00:07:20,374 P116667 INFO Student 4: [Metrics] AUC: 0.897227 - logloss: 0.312322
+2024-09-21 00:07:20,425 P116667 INFO Student 5: [Metrics] AUC: 0.897160 - logloss: 0.312443
+2024-09-21 00:07:20,474 P116667 INFO Student 6: [Metrics] AUC: 0.897119 - logloss: 0.312510
+2024-09-21 00:07:20,513 P116667 INFO Teacher: [Metrics] AUC: 0.897530 - logloss: 0.311911
+2024-09-21 00:07:20,519 P116667 INFO Save best model: monitor(max)=0.897530
+2024-09-21 00:07:20,681 P116667 INFO ************ Epoch=6 end ************
+2024-09-21 00:08:05,084 P116667 INFO Train loss: 0.345198
+2024-09-21 00:08:05,085 P116667 INFO Evaluation @epoch 7 - batch 145: 
+2024-09-21 00:08:06,430 P116667 INFO Student 1: [Metrics] AUC: 0.897644 - logloss: 0.311575
+2024-09-21 00:08:06,485 P116667 INFO Student 2: [Metrics] AUC: 0.897421 - logloss: 0.311994
+2024-09-21 00:08:06,541 P116667 INFO Student 3: [Metrics] AUC: 0.897303 - logloss: 0.312195
+2024-09-21 00:08:06,599 P116667 INFO Student 4: [Metrics] AUC: 0.897665 - logloss: 0.311789
+2024-09-21 00:08:06,654 P116667 INFO Student 5: [Metrics] AUC: 0.897504 - logloss: 0.312270
+2024-09-21 00:08:06,709 P116667 INFO Student 6: [Metrics] AUC: 0.897643 - logloss: 0.311821
+2024-09-21 00:08:06,765 P116667 INFO Teacher: [Metrics] AUC: 0.897897 - logloss: 0.311377
+2024-09-21 00:08:06,771 P116667 INFO Save best model: monitor(max)=0.897897
+2024-09-21 00:08:06,932 P116667 INFO ************ Epoch=7 end ************
+2024-09-21 00:08:51,267 P116667 INFO Train loss: 0.343763
+2024-09-21 00:08:51,267 P116667 INFO Evaluation @epoch 8 - batch 145: 
+2024-09-21 00:08:52,480 P116667 INFO Student 1: [Metrics] AUC: 0.897807 - logloss: 0.311480
+2024-09-21 00:08:52,540 P116667 INFO Student 2: [Metrics] AUC: 0.897760 - logloss: 0.311712
+2024-09-21 00:08:52,595 P116667 INFO Student 3: [Metrics] AUC: 0.897690 - logloss: 0.311764
+2024-09-21 00:08:52,650 P116667 INFO Student 4: [Metrics] AUC: 0.897683 - logloss: 0.311934
+2024-09-21 00:08:52,705 P116667 INFO Student 5: [Metrics] AUC: 0.897927 - logloss: 0.311625
+2024-09-21 00:08:52,760 P116667 INFO Student 6: [Metrics] AUC: 0.897749 - logloss: 0.311972
+2024-09-21 00:08:52,814 P116667 INFO Teacher: [Metrics] AUC: 0.898122 - logloss: 0.311232
+2024-09-21 00:08:52,819 P116667 INFO Save best model: monitor(max)=0.898122
+2024-09-21 00:08:52,975 P116667 INFO ************ Epoch=8 end ************
+2024-09-21 00:09:37,402 P116667 INFO Train loss: 0.343208
+2024-09-21 00:09:37,403 P116667 INFO Evaluation @epoch 9 - batch 145: 
+2024-09-21 00:09:38,648 P116667 INFO Student 1: [Metrics] AUC: 0.897691 - logloss: 0.312188
+2024-09-21 00:09:38,710 P116667 INFO Student 2: [Metrics] AUC: 0.897582 - logloss: 0.312221
+2024-09-21 00:09:38,769 P116667 INFO Student 3: [Metrics] AUC: 0.897656 - logloss: 0.311999
+2024-09-21 00:09:38,824 P116667 INFO Student 4: [Metrics] AUC: 0.897589 - logloss: 0.312127
+2024-09-21 00:09:38,879 P116667 INFO Student 5: [Metrics] AUC: 0.897752 - logloss: 0.312022
+2024-09-21 00:09:38,933 P116667 INFO Student 6: [Metrics] AUC: 0.897628 - logloss: 0.312095
+2024-09-21 00:09:38,988 P116667 INFO Teacher: [Metrics] AUC: 0.898012 - logloss: 0.311569
+2024-09-21 00:09:38,993 P116667 INFO Monitor(max)=0.898012 STOP!
+2024-09-21 00:09:38,993 P116667 INFO Reduce learning rate on plateau: 0.000100
+2024-09-21 00:09:39,096 P116667 INFO ************ Epoch=9 end ************
+2024-09-21 00:10:23,495 P116667 INFO Train loss: 0.302138
+2024-09-21 00:10:23,496 P116667 INFO Evaluation @epoch 10 - batch 145: 
+2024-09-21 00:10:24,747 P116667 INFO Student 1: [Metrics] AUC: 0.903706 - logloss: 0.306081
+2024-09-21 00:10:24,802 P116667 INFO Student 2: [Metrics] AUC: 0.903575 - logloss: 0.306214
+2024-09-21 00:10:24,858 P116667 INFO Student 3: [Metrics] AUC: 0.903406 - logloss: 0.306399
+2024-09-21 00:10:24,913 P116667 INFO Student 4: [Metrics] AUC: 0.903654 - logloss: 0.305808
+2024-09-21 00:10:24,972 P116667 INFO Student 5: [Metrics] AUC: 0.903764 - logloss: 0.305454
+2024-09-21 00:10:25,027 P116667 INFO Student 6: [Metrics] AUC: 0.903551 - logloss: 0.306020
+2024-09-21 00:10:25,082 P116667 INFO Teacher: [Metrics] AUC: 0.903988 - logloss: 0.305357
+2024-09-21 00:10:25,088 P116667 INFO Save best model: monitor(max)=0.903988
+2024-09-21 00:10:25,251 P116667 INFO ************ Epoch=10 end ************
+2024-09-21 00:11:09,405 P116667 INFO Train loss: 0.283198
+2024-09-21 00:11:09,406 P116667 INFO Evaluation @epoch 11 - batch 145: 
+2024-09-21 00:11:10,603 P116667 INFO Student 1: [Metrics] AUC: 0.905039 - logloss: 0.306997
+2024-09-21 00:11:10,658 P116667 INFO Student 2: [Metrics] AUC: 0.904761 - logloss: 0.307423
+2024-09-21 00:11:10,713 P116667 INFO Student 3: [Metrics] AUC: 0.904653 - logloss: 0.307465
+2024-09-21 00:11:10,769 P116667 INFO Student 4: [Metrics] AUC: 0.904831 - logloss: 0.307299
+2024-09-21 00:11:10,824 P116667 INFO Student 5: [Metrics] AUC: 0.905037 - logloss: 0.306942
+2024-09-21 00:11:10,878 P116667 INFO Student 6: [Metrics] AUC: 0.904685 - logloss: 0.307494
+2024-09-21 00:11:10,936 P116667 INFO Teacher: [Metrics] AUC: 0.905239 - logloss: 0.306516
+2024-09-21 00:11:10,944 P116667 INFO Save best model: monitor(max)=0.905239
+2024-09-21 00:11:11,102 P116667 INFO ************ Epoch=11 end ************
+2024-09-21 00:11:55,169 P116667 INFO Train loss: 0.273138
+2024-09-21 00:11:55,169 P116667 INFO Evaluation @epoch 12 - batch 145: 
+2024-09-21 00:11:56,410 P116667 INFO Student 1: [Metrics] AUC: 0.904259 - logloss: 0.310293
+2024-09-21 00:11:56,465 P116667 INFO Student 2: [Metrics] AUC: 0.904046 - logloss: 0.310793
+2024-09-21 00:11:56,521 P116667 INFO Student 3: [Metrics] AUC: 0.903835 - logloss: 0.311058
+2024-09-21 00:11:56,581 P116667 INFO Student 4: [Metrics] AUC: 0.904098 - logloss: 0.310754
+2024-09-21 00:11:56,641 P116667 INFO Student 5: [Metrics] AUC: 0.904177 - logloss: 0.310426
+2024-09-21 00:11:56,699 P116667 INFO Student 6: [Metrics] AUC: 0.903972 - logloss: 0.310968
+2024-09-21 00:11:56,755 P116667 INFO Teacher: [Metrics] AUC: 0.904524 - logloss: 0.309822
+2024-09-21 00:11:56,765 P116667 INFO Monitor(max)=0.904524 STOP!
+2024-09-21 00:11:56,765 P116667 INFO Reduce learning rate on plateau: 0.000010
+2024-09-21 00:11:56,911 P116667 INFO ************ Epoch=12 end ************
+2024-09-21 00:12:41,558 P116667 INFO Train loss: 0.255395
+2024-09-21 00:12:41,559 P116667 INFO Evaluation @epoch 13 - batch 145: 
+2024-09-21 00:12:42,823 P116667 INFO Student 1: [Metrics] AUC: 0.904112 - logloss: 0.313376
+2024-09-21 00:12:42,879 P116667 INFO Student 2: [Metrics] AUC: 0.903830 - logloss: 0.313871
+2024-09-21 00:12:42,943 P116667 INFO Student 3: [Metrics] AUC: 0.903698 - logloss: 0.314076
+2024-09-21 00:12:42,998 P116667 INFO Student 4: [Metrics] AUC: 0.903883 - logloss: 0.313471
+2024-09-21 00:12:43,053 P116667 INFO Student 5: [Metrics] AUC: 0.903999 - logloss: 0.312960
+2024-09-21 00:12:43,107 P116667 INFO Student 6: [Metrics] AUC: 0.903803 - logloss: 0.313521
+2024-09-21 00:12:43,162 P116667 INFO Teacher: [Metrics] AUC: 0.904351 - logloss: 0.312596
+2024-09-21 00:12:43,168 P116667 INFO Monitor(max)=0.904351 STOP!
+2024-09-21 00:12:43,168 P116667 INFO Reduce learning rate on plateau: 0.000001
+2024-09-21 00:12:43,168 P116667 INFO ********* Epoch==13 early stop *********
+2024-09-21 00:12:43,276 P116667 INFO Training finished.
+2024-09-21 00:12:43,277 P116667 INFO Load best model: /mnt/public/lhh/code/model_zoo/EKTF/EKTF_torch/checkpoints/ML_1M_7_x1/EKTF_ML_1M_013_11ec37a4.model
+2024-09-21 00:12:43,308 P116667 INFO ****** Validation evaluation ******
+2024-09-21 00:12:44,528 P116667 INFO Student 1: [Metrics] logloss: 0.306997 - AUC: 0.905039
+2024-09-21 00:12:44,583 P116667 INFO Student 2: [Metrics] logloss: 0.307423 - AUC: 0.904761
+2024-09-21 00:12:44,647 P116667 INFO Student 3: [Metrics] logloss: 0.307465 - AUC: 0.904653
+2024-09-21 00:12:44,703 P116667 INFO Student 4: [Metrics] logloss: 0.307299 - AUC: 0.904831
+2024-09-21 00:12:44,761 P116667 INFO Student 5: [Metrics] logloss: 0.306942 - AUC: 0.905037
+2024-09-21 00:12:44,821 P116667 INFO Student 6: [Metrics] logloss: 0.307494 - AUC: 0.904685
+2024-09-21 00:12:44,879 P116667 INFO Teacher: [Metrics] logloss: 0.306516 - AUC: 0.905239
+2024-09-21 00:12:44,931 P116667 INFO ******** Test evaluation ********
+2024-09-21 00:12:44,931 P116667 INFO Loading data...
+2024-09-21 00:12:44,931 P116667 INFO Loading data from h5: ../../../data/ML_1M_7_x1/test.h5
+2024-09-21 00:12:44,941 P116667 INFO Test samples: total/73902, blocks/1
+2024-09-21 00:12:44,941 P116667 INFO Loading test data done.
+2024-09-21 00:12:46,164 P116667 INFO Student 1: [Metrics] logloss: 0.306151 - AUC: 0.905465
+2024-09-21 00:12:46,218 P116667 INFO Student 2: [Metrics] logloss: 0.306289 - AUC: 0.905380
+2024-09-21 00:12:46,276 P116667 INFO Student 3: [Metrics] logloss: 0.306218 - AUC: 0.905340
+2024-09-21 00:12:46,331 P116667 INFO Student 4: [Metrics] logloss: 0.306388 - AUC: 0.905239
+2024-09-21 00:12:46,389 P116667 INFO Student 5: [Metrics] logloss: 0.305863 - AUC: 0.905589
+2024-09-21 00:12:46,447 P116667 INFO Student 6: [Metrics] logloss: 0.306270 - AUC: 0.905375
+2024-09-21 00:12:46,505 P116667 INFO Teacher: [Metrics] logloss: 0.305446 - AUC: 0.905799
