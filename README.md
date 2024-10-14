@@ -20,14 +20,11 @@ tqdm
 ![image](https://github.com/user-attachments/assets/d52ae54a-271c-4dfd-985a-ded221e9ba08)
 ![image](https://github.com/user-attachments/assets/c75b95c9-0f2e-49b5-8d1d-ee5669bb42e8)
 
-
-
-
 ## Datasets
 Get the datasets from https://github.com/reczoo/Datasets
 
 ## Hyperparameter settings and logs
-We will open source detailed hyperparameter settings and concise, easy-to-understand run logs after hiring.
+Get the result from ./checkpoints
 
 ## Acknowledgement
 This implementation is based on FuxiCTR and BARS. Thanks for their sharing and contribution.  
