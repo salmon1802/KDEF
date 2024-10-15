@@ -73,8 +73,6 @@ class EKTF(BaseModel):
     def add_loss(self, inputs):
         return_dict = self.forward(inputs)
         y_true = self.get_labels(inputs)
-        random_flips = np.random.rand(len(y_true)) < self.threshold
-        y_true[random_flips] = 1 - y_true[random_flips]
         y_pred = return_dict["y_pred"]
         logits_stu = return_dict["logits_stu"]
 
