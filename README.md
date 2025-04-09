@@ -1,5 +1,5 @@
 If you have any questions, feel free to ask!  :)
-# Knowledge-Driven Ensemble Learning Framework for Click-through rate Prediction (old name EKTF)
+# From Collapse to Stability: A Study on Network Collapse in Scaling Up Recommendation Models (old name EKTF)
 
 ## Model Overview
 ![image](https://github.com/user-attachments/assets/0a9f4446-c874-4315-b389-8448f9e25107)
